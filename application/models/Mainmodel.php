@@ -82,7 +82,7 @@
 
     $this->db->where('refin_foodID', $idfood);
     $this->db->where("ingredientStatus !=", 99);
-    $query = $this->db->get('ingredient');
+    $query = $this->db->get('food_ingreditent_order');
     foreach ($query->result_array() as $key => $value) {
     $data[$key] = $value;
     }
@@ -127,11 +127,11 @@ function showaddfoodname(){
     }
 
 
-
+// ----------------------------------------------------------------------------------------------------------//
 
     function addingredientamount($dataingredient){
       
-    $this->db->insert('ingredient',$dataingredient);
+    $this->db->insert('food_ingreditent_order',$dataingredient);
     }
 
     //    function addingredientref($refingredientinfo){
@@ -186,8 +186,8 @@ function showaddfoodname(){
     );
 
     $this->db->where('refin_foodID', $i);
-    $this->db->delete('ingredient');
-    // $this->db->update('ingredient', $dataingredient);
+    $this->db->delete('food_ingreditent_order');
+    // $this->db->update('food_ingreditent_order', $dataingredient);
 
 
     $dataimage = array(
@@ -244,13 +244,13 @@ function showaddfoodname(){
     function updateingredient($dataingredient,$id) {
 
     if($id == 0){
-    $this->db->insert('ingredient', $dataingredient);
+    $this->db->insert('food_ingreditent_order', $dataingredient);
               
 
                }
 
     $this->db->where('ingredientID',$id);
-    $this->db->update('ingredient', $dataingredient);
+    $this->db->update('food_ingreditent_order', $dataingredient);
     }
 
 
@@ -261,7 +261,7 @@ function showaddfoodname(){
 
    $this->db->where('ingredientID', $id);
   // $this->db->update('ingredient', $data);
-   $this->db->delete('ingredient');
+   $this->db->delete('food_ingreditent_order');
 
 
  }
