@@ -116,10 +116,10 @@
                         <a href="<?php echo base_url('index.php/Ingredientcontroller/viewingredient'); ?>">Ingredient</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/Analysiscontroller/viewanalysis'); ?>">Analysis</a>
+                        <a href="<?php echo base_url('index.php/Analysiscontroller/viewanalysis'); ?>">Calculate</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/Reportcontroller/viewreport/2015/11'); ?>">Report</a>
+                        <a href="<?php echo base_url('index.php/Reportcontroller/viewreport/2016/01'); ?>">Report</a>
                     </li>
                 </ul>
             

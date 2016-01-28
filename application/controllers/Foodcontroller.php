@@ -46,7 +46,7 @@
     }
 
 
-
+// ADD FOOD_INGREDIENT_ORDER---------------------------------------------/
 
     function save(){
 
@@ -59,7 +59,7 @@
     $randomname = rand();
     $returnDetailImg = $this->imagemodel->uploadIMG("fileToUpload",$randomname);
     $dataimage = array(
-    'refpic_foodID' => $insert_id,
+    'foodID' => $insert_id,
  
     'imageTitle' => $returnDetailImg["file_name"],
     'imagePicture' =>$returnDetailImg["client_name"],
@@ -91,8 +91,8 @@
 
  foreach (array_combine($_POST['option'],$_POST['ingredientinfoDetail']) as $option => $id){
      $dataingredient =array(
-     'refin_foodID' => $insert_id,   
-    'ref_ingredientinfo' => $id,
+     'foodID' => $insert_id,   
+    'ingredientinfoID' => $id,
     'ingredientAmount' => $option,
       'ingredientCreatedDate' =>date('Y-m-d H:i:s'),
     'ingredientUpdatedDate' =>date('Y-m-d H:i:s'),

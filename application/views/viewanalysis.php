@@ -46,16 +46,40 @@
         </script>
     </div>
 
+
+        <label  class="control-label">Food</label>
+        <div class="form-group">
+
+        <div class="row">
+        <div class="col-md-4">
+        <input type="text" step="any" maxlength="27" class="form-control" id="data" name="data" > 
+        </div>
+        </div>
+        </div>
+
+
+         <label  class="control-label">Amount of Food</label>
+        <div class="form-group">
+
+        <div class="row">
+        <div class="col-md-4">
+        <input type="text" step="any" maxlength="27" class="form-control" id="data" name="data" > 
+        </div>
+        </div>
+        </div>
+
+
+
 <label  class="control-label">Notes</label>
     <div class="form-group">
 
 <div class="row">
      <div class="col-md-4">
     <input type="text" step="any" maxlength="27" class="form-control" id="data" name="data" > 
-   
   </div>
-
 </div>
+
+
   </div>
    <div class="row col-md-offset-3">
     <input type="submit" name="submit" class="btn btn-primary" value="Analyze" onClick="return confirm('Do you Confirm?')">

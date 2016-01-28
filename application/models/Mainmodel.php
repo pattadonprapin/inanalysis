@@ -66,7 +66,8 @@
 
 
 
-    //--------------------------------------------------FOOD-------------------------------------------------------------//
+    
+// -------------------------------------------FOOD_INGREDIENT_ORDER-------------------------------------------------//
 
 
 
@@ -76,11 +77,8 @@
     $this->db->select('ingredientID');
     $this->db->select('ingredientAmount');
    // $this->db->select('ingredientDetail');
-     $this->db->select('refin_foodID');
-
-
-
-    $this->db->where('refin_foodID', $idfood);
+     $this->db->select('foodID');
+    $this->db->where('foodID', $idfood);
     $this->db->where("ingredientStatus !=", 99);
     $query = $this->db->get('food_ingreditent_order');
     foreach ($query->result_array() as $key => $value) {
@@ -127,7 +125,6 @@ function showaddfoodname(){
     }
 
 
-// ----------------------------------------------------------------------------------------------------------//
 
     function addingredientamount($dataingredient){
       
@@ -151,8 +148,8 @@ function showaddfoodname(){
 
     $this->db->from('food');
 
-    // $this->db->join('direction', 'food.foodID = direction.ref_foodID','left');
-    $this->db->join('image', 'food.foodID = image.refpic_foodID','left');
+    // $this->db->join('direction', 'food.foodID = direction.foodID','left');
+    $this->db->join('image', 'food.foodID = image.foodID','left');
     $query = $this->db->get();
 
 
@@ -185,7 +182,7 @@ function showaddfoodname(){
     'ingredientStatus' => "99"
     );
 
-    $this->db->where('refin_foodID', $i);
+    $this->db->where('foodID', $i);
     $this->db->delete('food_ingreditent_order');
     // $this->db->update('food_ingreditent_order', $dataingredient);
 
@@ -194,11 +191,11 @@ function showaddfoodname(){
     'imageStatus' => "99"
     );
 
-    $this->db->where('refpic_foodID', $i);
+    $this->db->where('foodID', $i);
     $this->db->update('image', $dataimage);
 
     $this->db->select('imageTitle');
-    $this->db->where('refpic_foodID', $i);
+    $this->db->where('foodID', $i);
     $query = $this->db->get('image');
     foreach ($query->result() as $row) {
     return $row->imageTitle;
@@ -215,7 +212,7 @@ function showaddfoodname(){
 
     $this->db->from('food');
     // $this->db->join('direction', 'food.foodID = direction.ref_foodID','left');
-    $this->db->join('image', 'food.foodID = image.refpic_foodID','left');
+    $this->db->join('image', 'food.foodID = image.foodID','left');
 
     $query = $this->db->get();
     foreach ($query->result_array() as $key => $value) {
